@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### 🛠 Fixed
+- Release script summary no longer exits non-zero when optional flags are omitted.
+
 ## [v0.2.0] - 2026-02-06
 
 ### ✨ Added

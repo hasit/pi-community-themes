@@ -238,6 +238,12 @@ fi
 echo "✅ Release prepared: $TAG"
 echo "   Commit: $(git rev-parse --short HEAD)"
 echo "   Tag:    $TAG"
-[[ $DO_PUSH -eq 1 ]] && echo "   Pushed: origin"
-[[ $DO_GH_RELEASE -eq 1 ]] && echo "   Release: created via gh"
-[[ $DO_SMOKE_TEST -eq 1 ]] && echo "   Smoke:   pi install completed"
+if (( DO_PUSH == 1 )); then
+  echo "   Pushed: origin"
+fi
+if (( DO_GH_RELEASE == 1 )); then
+  echo "   Release: created via gh"
+fi
+if (( DO_SMOKE_TEST == 1 )); then
+  echo "   Smoke:   pi install completed"
+fi
