@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v0.2.0] - 2026-02-06
+
 ### ✨ Added
 - New light-theme variants:
   - `atom-one-light-soft`
@@ -19,6 +21,9 @@ All notable changes to this project will be documented in this file.
 - `README.md` theme list expanded to include all available variants.
 - `README.md` release workflow documentation (CHANGELOG-driven flow).
 - `package.json` adds `npm run release` script.
+
+### Preview
+- `assets/previews/v0.2.0.png`
 
 ## [v0.1.0] - 2026-02-06
 
