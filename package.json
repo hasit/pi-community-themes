@@ -15,6 +15,7 @@
     "pi-themes"
   ],
   "scripts": {
+    "preview:generate": "python3 scripts/generate_previews.py",
     "release": "./scripts/release.sh"
   },
   "files": [

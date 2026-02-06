@@ -4,9 +4,21 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added (Unreleased)
+
+- Deterministic preview generator: `scripts/generate_previews.py`.
+- npm script for preview generation: `npm run preview:generate`.
+
+### Changed (Unreleased)
+
+- Regenerated all theme previews to be theme-specific
+  (no shared image reuse).
+- Preview generation now derives palette and layout accents
+  from each theme token set.
+
 ## [v0.2.1] - 2026-02-06
 
-### Added
+### Added in v0.2.1
 
 - Theme preview assets using per-theme naming:
   - `assets/previews/atom-one-dark.png`
@@ -14,7 +26,7 @@ All notable changes to this project will be documented in this file.
   - `assets/previews/atom-one-light-soft.png`
   - `assets/previews/atom-one-light-crisp.png`
 
-### Changed
+### Changed in v0.2.1
 
 - README theme list now links each theme directly to its preview image.
 - README no longer includes internal release workflow notes.
