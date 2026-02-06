@@ -8,10 +8,25 @@
     "url": "https://github.com/hasit/pi-community-themes.git"
   },
   "homepage": "https://github.com/hasit/pi-community-themes",
-  "keywords": ["pi-package", "pi", "themes", "pi-themes"],
-  "files": ["themes", "assets", "README.md", "LICENSE"],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "themes",
+    "pi-themes"
+  ],
+  "scripts": {
+    "release": "./scripts/release.sh"
+  },
+  "files": [
+    "themes",
+    "assets",
+    "README.md",
+    "LICENSE"
+  ],
   "pi": {
-    "themes": ["./themes"],
+    "themes": [
+      "./themes"
+    ],
     "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/main/assets/preview.png"
   }
 }
