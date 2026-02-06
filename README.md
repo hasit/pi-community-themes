@@ -1,6 +1,6 @@
 # pi-community-themes
 
-Community-curated themes for [pi](https://github.com/badlogic/pi-mono).
+Community-curated themes for [pi-coding-agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) (installed via `pi`).
 
 ## Install
 
@@ -18,7 +18,7 @@ pi install git:https://github.com/hasit/pi-community-themes@v0.3.0
 
 ## Usage
 
-After install, open `/settings` in pi and select one of the installed themes.
+After install, open `/settings` in pi-coding-agent and select one of the installed themes.
 
 ## Available themes
 
