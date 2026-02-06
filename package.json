@@ -1,0 +1,17 @@
+{
+  "name": "pi-community-themes",
+  "version": "0.1.0",
+  "description": "Community-curated themes for pi coding agent",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasit/pi-community-themes.git"
+  },
+  "homepage": "https://github.com/hasit/pi-community-themes",
+  "keywords": ["pi-package", "pi", "themes", "pi-themes"],
+  "files": ["themes", "assets", "README.md", "LICENSE"],
+  "pi": {
+    "themes": ["./themes"],
+    "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/main/assets/preview.png"
+  }
+}
