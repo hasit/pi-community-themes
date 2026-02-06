@@ -262,8 +262,34 @@ unreleased_body = changelog[start:next_header].strip()
 if not unreleased_body:
     raise SystemExit('CHANGELOG [Unreleased] section is empty; add release notes there first')
 
+if re.search(r'^###\s+Changed\b', unreleased_body, flags=re.M):
+    raise SystemExit(
+        'Use "Updated" instead of "Changed" in CHANGELOG [Unreleased] headings'
+    )
+
+required = [
+    '### Added (Unreleased)',
+    '### Updated (Unreleased)',
+    '### Removed (Unreleased)',
+]
+for heading in required:
+    if heading not in unreleased_body:
+        raise SystemExit(
+            'CHANGELOG [Unreleased] must contain headings: '
+            'Added/Updated/Removed (Unreleased)'
+        )
+
+versioned_body = unreleased_body
+for section in ('Added', 'Updated', 'Removed'):
+    versioned_body = re.sub(
+        rf'^### {section} \(Unreleased\)$',
+        f'### {section} ({tag})',
+        versioned_body,
+        flags=re.M,
+    )
+
 date = datetime.date.today().isoformat()
-entry = f'## [{tag}] - {date}\n\n{unreleased_body}\n\n'
+entry = f'## [{tag}] - {date}\n\n{versioned_body}\n\n'
 
 before = changelog[:changelog.index(marker)]
 after = changelog[next_header:].lstrip('\n')

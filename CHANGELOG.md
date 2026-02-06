@@ -6,11 +6,11 @@ All notable changes to this project will be documented in this file.
 
 ## [v0.2.3] - 2026-02-06
 
-### Added (Unreleased)
+### Added (v0.2.3)
 
 - Added `atom-one-darker` and `atom-one-darkest` themes.
 
-### Updated (Unreleased)
+### Updated (v0.2.3)
 
 - Renamed `atom-one-light-soft` to `atom-one-lighter`.
 - Renamed `atom-one-light-crisp` to `atom-one-lightest`.
@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 - Release script now validates naming convention and family completeness.
 - Release script dry-run output formatting was corrected.
 
-### Removed (Unreleased)
+### Removed (v0.2.3)
 
 - Removed `atom-one-light-soft` and `atom-one-light-crisp` theme files.
 - Removed old preview files tied to removed names.
