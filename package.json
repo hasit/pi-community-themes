@@ -27,6 +27,6 @@
     "themes": [
       "./themes"
     ],
-    "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/v0.2.0/assets/previews/v0.2.0.png"
+    "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/main/assets/previews/atom-one-light.png"
   }
 }

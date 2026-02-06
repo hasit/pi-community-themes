@@ -7,25 +7,26 @@ Usage:
   ./scripts/release.sh <version> [options]
 
 Example:
-  ./scripts/release.sh 0.2.0 \
-    --commit-message "release: v0.2.0 community theme expansion" \
+  ./scripts/release.sh 0.2.1 \
+    --commit-message "release: v0.2.1 docs and preview cleanup" \
+    --image-theme atom-one-light \
     --push --gh-release --smoke-test
 
 What this script does:
   1) Verifies clean git working tree
-  2) Creates named preview: assets/previews/v<version>.png
-  3) Updates package.json version + pi.image URL to tag-pinned preview
+  2) Validates preview naming: assets/previews/<theme-name>.png
+  3) Updates package.json version + tag-pinned pi.image URL
   4) Updates pinned README install tag
-  5) Promotes CHANGELOG [Unreleased] section into new version entry
+  5) Promotes CHANGELOG [Unreleased] section into a new version entry
   6) Commits and tags v<version>
-  7) Optionally pushes and creates GitHub release (notes pulled from CHANGELOG)
+  7) Optionally pushes and creates GitHub release (notes from CHANGELOG)
   8) Optional smoke test with pinned install command
 
 Options:
-  --preview-source <path>  Source image for named preview
-                           (default: assets/preview.png)
   --commit-message <msg>   Release commit message
                            (default: "release: v<version> community theme expansion")
+  --image-theme <name>     Theme preview used for package image URL
+                           (default: atom-one-light)
   --push                   Push commit + tag to origin (default: off)
   --gh-release             Create GitHub release with gh CLI (default: off)
   --smoke-test             Run: pi install git:https://github.com/<owner>/<repo>@v<version>
@@ -36,7 +37,7 @@ EOF
 
 require_cmd() {
   command -v "$1" >/dev/null 2>&1 || {
-    echo "❌ Missing required command: $1" >&2
+    echo "Missing required command: $1" >&2
     exit 1
   }
 }
@@ -50,13 +51,13 @@ VERSION="${1:-}"
 shift || true
 
 if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-  echo "❌ Version must be semver without v-prefix, e.g. 0.2.0" >&2
+  echo "Version must be semver without v-prefix, e.g. 0.2.1" >&2
   exit 1
 fi
 
 TAG="v$VERSION"
-PREVIEW_SOURCE="assets/preview.png"
 COMMIT_MESSAGE="release: $TAG community theme expansion"
+IMAGE_THEME="atom-one-light"
 DO_PUSH=0
 DO_GH_RELEASE=0
 DO_SMOKE_TEST=0
@@ -64,24 +65,39 @@ DRY_RUN=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --preview-source)
-      PREVIEW_SOURCE="$2"; shift 2 ;;
     --commit-message)
-      COMMIT_MESSAGE="$2"; shift 2 ;;
+      COMMIT_MESSAGE="$2"
+      shift 2
+      ;;
+    --image-theme)
+      IMAGE_THEME="$2"
+      shift 2
+      ;;
     --push)
-      DO_PUSH=1; shift ;;
+      DO_PUSH=1
+      shift
+      ;;
     --gh-release)
-      DO_GH_RELEASE=1; shift ;;
+      DO_GH_RELEASE=1
+      shift
+      ;;
     --smoke-test)
-      DO_SMOKE_TEST=1; shift ;;
+      DO_SMOKE_TEST=1
+      shift
+      ;;
     --dry-run)
-      DRY_RUN=1; shift ;;
+      DRY_RUN=1
+      shift
+      ;;
     -h|--help)
-      usage; exit 0 ;;
-    *)
-      echo "❌ Unknown option: $1" >&2
       usage
-      exit 1 ;;
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1" >&2
+      usage
+      exit 1
+      ;;
   esac
 done
 
@@ -97,29 +113,26 @@ if (( DO_SMOKE_TEST == 1 )); then
 fi
 
 if [[ ! -f package.json || ! -f README.md || ! -f CHANGELOG.md ]]; then
-  echo "❌ Run this from repo root and ensure package.json, README.md, CHANGELOG.md exist" >&2
+  echo "Run this from repo root and ensure package.json, README.md, and CHANGELOG.md exist" >&2
   exit 1
 fi
 
 if ! is_clean_tree; then
-  echo "❌ Git tree must be clean before running release script" >&2
+  echo "Git tree must be clean before running release script" >&2
   git status --short
   exit 1
 fi
 
 if git rev-parse "$TAG" >/dev/null 2>&1; then
-  echo "❌ Tag already exists: $TAG" >&2
-  exit 1
-fi
-
-if [[ ! -f "$PREVIEW_SOURCE" ]]; then
-  echo "❌ Preview source not found: $PREVIEW_SOURCE" >&2
+  echo "Tag already exists: $TAG" >&2
   exit 1
 fi
 
 OWNER_REPO=$(python3 - <<'PY'
-import json, re
+import json
+import re
 from pathlib import Path
+
 pkg = json.loads(Path('package.json').read_text())
 url = pkg.get('repository', {}).get('url', '')
 m = re.search(r'github\.com[:/](?P<slug>[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+?)(?:\.git)?$', url)
@@ -129,12 +142,38 @@ print(m.group('slug'))
 PY
 )
 
-PREVIEW_DEST="assets/previews/$TAG.png"
+IMAGE_PREVIEW_PATH="assets/previews/${IMAGE_THEME}.png"
+if [[ ! -f "$IMAGE_PREVIEW_PATH" ]]; then
+  echo "Preview image for --image-theme not found: $IMAGE_PREVIEW_PATH" >&2
+  exit 1
+fi
+
+python3 - <<'PY'
+import glob
+import json
+from pathlib import Path
+
+missing = []
+for theme_path in sorted(glob.glob('themes/*.json')):
+    if theme_path.endswith('/.gitkeep'):
+        continue
+    data = json.loads(Path(theme_path).read_text())
+    name = data.get('name')
+    if not name:
+        raise SystemExit(f'Missing theme name in {theme_path}')
+    preview = Path('assets/previews') / f'{name}.png'
+    if not preview.exists():
+        missing.append(str(preview))
+
+if missing:
+    raise SystemExit('Missing per-theme preview files:\n- ' + '\n- '.join(missing))
+PY
 
 if (( DRY_RUN == 1 )); then
   echo "[dry-run] tag: $TAG"
   echo "[dry-run] owner/repo: $OWNER_REPO"
-  echo "[dry-run] preview copy: $PREVIEW_SOURCE -> $PREVIEW_DEST"
+  echo "[dry-run] validate: assets/previews/<theme-name>.png for all themes"
+  echo "[dry-run] package image preview: $IMAGE_PREVIEW_PATH"
   echo "[dry-run] update: package.json version + pi.image"
   echo "[dry-run] update: README pinned tag"
   echo "[dry-run] update: CHANGELOG.md by promoting [Unreleased] to [$TAG]"
@@ -146,23 +185,22 @@ if (( DRY_RUN == 1 )); then
   exit 0
 fi
 
-mkdir -p assets/previews
-cp "$PREVIEW_SOURCE" "$PREVIEW_DEST"
-
-python3 - "$VERSION" "$TAG" "$OWNER_REPO" "$PREVIEW_DEST" <<'PY'
+python3 - "$VERSION" "$TAG" "$OWNER_REPO" "$IMAGE_PREVIEW_PATH" <<'PY'
 import datetime
 import json
 import re
 import sys
 from pathlib import Path
 
-version, tag, owner_repo, preview_dest = sys.argv[1:]
+version, tag, owner_repo, image_preview_path = sys.argv[1:]
 
 # package.json
 pkg_path = Path('package.json')
 pkg = json.loads(pkg_path.read_text())
 pkg['version'] = version
-pkg.setdefault('pi', {})['image'] = f'https://raw.githubusercontent.com/{owner_repo}/{tag}/{preview_dest}'
+pkg.setdefault('pi', {})['image'] = (
+    f'https://raw.githubusercontent.com/{owner_repo}/{tag}/{image_preview_path}'
+)
 pkg_path.write_text(json.dumps(pkg, indent=2) + '\n')
 
 # README pinned install tag
@@ -193,8 +231,7 @@ if not unreleased_body:
     raise SystemExit('CHANGELOG [Unreleased] section is empty; add release notes there first')
 
 date = datetime.date.today().isoformat()
-entry_body = unreleased_body + f'\n\n### Preview\n- `{preview_dest}`'
-entry = f'## [{tag}] - {date}\n\n{entry_body}\n\n'
+entry = f'## [{tag}] - {date}\n\n{unreleased_body}\n\n'
 
 before = changelog[:changelog.index(marker)]
 after = changelog[next_header:].lstrip('\n')
@@ -202,7 +239,7 @@ new_changelog = before + marker + '\n\n' + entry + after
 changelog_path.write_text(new_changelog)
 PY
 
-git add package.json README.md CHANGELOG.md "$PREVIEW_DEST"
+git add package.json README.md CHANGELOG.md
 git commit -m "$COMMIT_MESSAGE"
 git tag -a "$TAG" -m "$TAG"
 
@@ -235,15 +272,15 @@ if (( DO_SMOKE_TEST == 1 )); then
   pi install "git:https://github.com/$OWNER_REPO@$TAG"
 fi
 
-echo "✅ Release prepared: $TAG"
-echo "   Commit: $(git rev-parse --short HEAD)"
-echo "   Tag:    $TAG"
+echo "Release prepared: $TAG"
+echo "Commit: $(git rev-parse --short HEAD)"
+echo "Tag:    $TAG"
 if (( DO_PUSH == 1 )); then
-  echo "   Pushed: origin"
+  echo "Pushed: origin"
 fi
 if (( DO_GH_RELEASE == 1 )); then
-  echo "   Release: created via gh"
+  echo "Release: created via gh"
 fi
 if (( DO_SMOKE_TEST == 1 )); then
-  echo "   Smoke:   pi install completed"
+  echo "Smoke:   pi install completed"
 fi
