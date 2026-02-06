@@ -4,9 +4,9 @@
   "vars": {
     "bg": "#002b36",
     "panel": "#073642",
-    "panelAlt": "#0a3d4a",
-    "selected": "#214b56",
-    "border": "#35555f",
+    "panelAlt": "#0b3c49",
+    "selected": "#184956",
+    "border": "#2f5a66",
     "accent": "#268bd2",
     "cyan": "#2aa198",
     "green": "#859900",
@@ -76,6 +76,6 @@
   "export": {
     "pageBg": "#002b36",
     "cardBg": "#073642",
-    "infoBg": "#293130"
+    "infoBg": "#163630"
   }
 }

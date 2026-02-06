@@ -1,0 +1,15 @@
+{
+  "atom-one": ["light", "dark"],
+  "catppuccin": ["latte", "frappe", "macchiato", "mocha"],
+  "dracula": [""],
+  "gruvbox": [
+    "dark-hard",
+    "dark-medium",
+    "dark-soft",
+    "light-hard",
+    "light-medium",
+    "light-soft"
+  ],
+  "nord": [""],
+  "solarized": ["light", "dark"]
+}

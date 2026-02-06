@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "solarized-light",
+  "name": "catppuccin-latte",
   "vars": {
-    "bg": "#fdf6e3",
-    "panel": "#eee8d5",
-    "panelAlt": "#e7e1cd",
-    "selected": "#ddd6c2",
-    "border": "#c7c1ae",
-    "accent": "#268bd2",
-    "cyan": "#2aa198",
-    "green": "#859900",
-    "red": "#dc322f",
-    "yellow": "#b58900",
-    "orange": "#cb4b16",
-    "purple": "#6c71c4",
-    "text": "#586e75",
-    "muted": "#657b83",
-    "dim": "#93a1a1",
-    "toolSuccessBg": "#e7ecd2",
-    "toolErrorBg": "#f4e0d5"
+    "bg": "#eff1f5",
+    "panel": "#e6e9ef",
+    "panelAlt": "#dce0e8",
+    "selected": "#ccd0da",
+    "border": "#acb0be",
+    "accent": "#1e66f5",
+    "cyan": "#179299",
+    "green": "#40a02b",
+    "red": "#d20f39",
+    "yellow": "#df8e1d",
+    "orange": "#fe640b",
+    "purple": "#8839ef",
+    "text": "#4c4f69",
+    "muted": "#6c6f85",
+    "dim": "#8c8fa1",
+    "toolSuccessBg": "#dae7dd",
+    "toolErrorBg": "#ecd6de"
   },
   "colors": {
     "accent": "accent",
@@ -74,8 +74,8 @@
     "bashMode": "green"
   },
   "export": {
-    "pageBg": "#fdf6e3",
-    "cardBg": "#eee8d5",
-    "infoBg": "#f4e9c8"
+    "pageBg": "#eff1f5",
+    "cardBg": "#e6e9ef",
+    "infoBg": "#ede5db"
   }
 }

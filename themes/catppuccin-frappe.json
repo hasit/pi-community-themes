@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "solarized-light",
+  "name": "catppuccin-frappe",
   "vars": {
-    "bg": "#fdf6e3",
-    "panel": "#eee8d5",
-    "panelAlt": "#e7e1cd",
-    "selected": "#ddd6c2",
-    "border": "#c7c1ae",
-    "accent": "#268bd2",
-    "cyan": "#2aa198",
-    "green": "#859900",
-    "red": "#dc322f",
-    "yellow": "#b58900",
-    "orange": "#cb4b16",
-    "purple": "#6c71c4",
-    "text": "#586e75",
-    "muted": "#657b83",
-    "dim": "#93a1a1",
-    "toolSuccessBg": "#e7ecd2",
-    "toolErrorBg": "#f4e0d5"
+    "bg": "#303446",
+    "panel": "#292c3c",
+    "panelAlt": "#232634",
+    "selected": "#414559",
+    "border": "#626880",
+    "accent": "#8caaee",
+    "cyan": "#81c8be",
+    "green": "#a6d189",
+    "red": "#e78284",
+    "yellow": "#e5c890",
+    "orange": "#ef9f76",
+    "purple": "#ca9ee6",
+    "text": "#c6d0f5",
+    "muted": "#a5adce",
+    "dim": "#838ba7",
+    "toolSuccessBg": "#3e474e",
+    "toolErrorBg": "#463d4d"
   },
   "colors": {
     "accent": "accent",
@@ -74,8 +74,8 @@
     "bashMode": "green"
   },
   "export": {
-    "pageBg": "#fdf6e3",
-    "cardBg": "#eee8d5",
-    "infoBg": "#f4e9c8"
+    "pageBg": "#303446",
+    "cardBg": "#292c3c",
+    "infoBg": "#46464f"
   }
 }

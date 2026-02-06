@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "solarized-light",
+  "name": "gruvbox-light-soft",
   "vars": {
-    "bg": "#fdf6e3",
-    "panel": "#eee8d5",
-    "panelAlt": "#e7e1cd",
-    "selected": "#ddd6c2",
-    "border": "#c7c1ae",
-    "accent": "#268bd2",
-    "cyan": "#2aa198",
-    "green": "#859900",
-    "red": "#dc322f",
-    "yellow": "#b58900",
-    "orange": "#cb4b16",
-    "purple": "#6c71c4",
-    "text": "#586e75",
-    "muted": "#657b83",
-    "dim": "#93a1a1",
-    "toolSuccessBg": "#e7ecd2",
-    "toolErrorBg": "#f4e0d5"
+    "bg": "#f2e5bc",
+    "panel": "#ebdbb2",
+    "panelAlt": "#e2cca9",
+    "selected": "#d5c4a1",
+    "border": "#bdae93",
+    "accent": "#076678",
+    "cyan": "#427b58",
+    "green": "#79740e",
+    "red": "#9d0006",
+    "yellow": "#b57614",
+    "orange": "#af3a03",
+    "purple": "#8f3f71",
+    "text": "#3c3836",
+    "muted": "#665c54",
+    "dim": "#928374",
+    "toolSuccessBg": "#d9ddbd",
+    "toolErrorBg": "#eccfc8"
   },
   "colors": {
     "accent": "accent",
@@ -74,8 +74,8 @@
     "bashMode": "green"
   },
   "export": {
-    "pageBg": "#fdf6e3",
-    "cardBg": "#eee8d5",
-    "infoBg": "#f4e9c8"
+    "pageBg": "#f2e5bc",
+    "cardBg": "#ebdbb2",
+    "infoBg": "#ebd8a8"
   }
 }

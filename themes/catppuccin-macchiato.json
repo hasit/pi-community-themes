@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "solarized-light",
+  "name": "catppuccin-macchiato",
   "vars": {
-    "bg": "#fdf6e3",
-    "panel": "#eee8d5",
-    "panelAlt": "#e7e1cd",
-    "selected": "#ddd6c2",
-    "border": "#c7c1ae",
-    "accent": "#268bd2",
-    "cyan": "#2aa198",
-    "green": "#859900",
-    "red": "#dc322f",
-    "yellow": "#b58900",
-    "orange": "#cb4b16",
-    "purple": "#6c71c4",
-    "text": "#586e75",
-    "muted": "#657b83",
-    "dim": "#93a1a1",
-    "toolSuccessBg": "#e7ecd2",
-    "toolErrorBg": "#f4e0d5"
+    "bg": "#24273a",
+    "panel": "#1e2030",
+    "panelAlt": "#181926",
+    "selected": "#363a4f",
+    "border": "#5b6078",
+    "accent": "#8aadf4",
+    "cyan": "#8bd5ca",
+    "green": "#a6da95",
+    "red": "#ed8796",
+    "yellow": "#eed49f",
+    "orange": "#f5a97f",
+    "purple": "#c6a0f6",
+    "text": "#cad3f5",
+    "muted": "#a5adcb",
+    "dim": "#8087a2",
+    "toolSuccessBg": "#343c45",
+    "toolErrorBg": "#3c3345"
   },
   "colors": {
     "accent": "accent",
@@ -74,8 +74,8 @@
     "bashMode": "green"
   },
   "export": {
-    "pageBg": "#fdf6e3",
-    "cardBg": "#eee8d5",
-    "infoBg": "#f4e9c8"
+    "pageBg": "#24273a",
+    "cardBg": "#1e2030",
+    "infoBg": "#3c3c46"
   }
 }

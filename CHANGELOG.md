@@ -6,23 +6,43 @@ All notable changes to this project will be documented in this file.
 
 ### Added (Unreleased)
 
-- Added five popular theme families:
-  - `catppuccin`
+- Added official Catppuccin variants:
+  - `catppuccin-latte`
+  - `catppuccin-frappe`
+  - `catppuccin-macchiato`
+  - `catppuccin-mocha`
+- Added official Gruvbox contrast variants:
+  - `gruvbox-light-soft`, `gruvbox-light-medium`, `gruvbox-light-hard`
+  - `gruvbox-dark-soft`, `gruvbox-dark-medium`, `gruvbox-dark-hard`
+- Added official single-variant themes:
   - `dracula`
-  - `gruvbox`
   - `nord`
-  - `solarized`
-- Added six variants for each new family:
-  `light`, `lighter`, `lightest`, `dark`, `darker`, `darkest`.
+- Added official Solarized variants:
+  - `solarized-light`
+  - `solarized-dark`
+- Added `config/official-theme-variants.json` for release-time validation.
 
 ### Updated (Unreleased)
 
-- Regenerated previews for all theme files after adding new families.
-- Expanded README theme catalog with grouped family sections and preview links.
+- README theme catalog now lists only official variants.
+- Regenerated previews to match the official variant set.
+- Release script now validates themes against
+  `config/official-theme-variants.json`.
 
 ### Removed (Unreleased)
 
-- None.
+- Removed non-official synthetic variants:
+  - `atom-one-lighter`, `atom-one-lightest`, `atom-one-darker`, `atom-one-darkest`
+  - `catppuccin-light`, `catppuccin-lighter`, `catppuccin-lightest`,
+    `catppuccin-dark`, `catppuccin-darker`, `catppuccin-darkest`
+  - `dracula-light`, `dracula-lighter`, `dracula-lightest`,
+    `dracula-dark`, `dracula-darker`, `dracula-darkest`
+  - `gruvbox-light`, `gruvbox-lighter`, `gruvbox-lightest`,
+    `gruvbox-dark`, `gruvbox-darker`, `gruvbox-darkest`
+  - `nord-light`, `nord-lighter`, `nord-lightest`,
+    `nord-dark`, `nord-darker`, `nord-darkest`
+  - `solarized-lighter`, `solarized-lightest`,
+    `solarized-darker`, `solarized-darkest`
 
 ## [v0.2.3] - 2026-02-06
 
