@@ -1,24 +1,24 @@
 {
   "$schema": "https://raw.githubusercontent.com/badlogic/pi-mono/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
-  "name": "atom-one-light-soft",
+  "name": "atom-one-darkest",
   "vars": {
-    "bg": "#f6f7fb",
-    "panel": "#eef1f7",
-    "panelAlt": "#e8ecf4",
-    "selected": "#d9e0ee",
-    "border": "#ccd4e1",
-    "accent": "#3b74f2",
-    "cyan": "#0b83b5",
-    "green": "#4c9b5d",
-    "red": "#d65a52",
-    "yellow": "#b98016",
-    "orange": "#9a6a0e",
-    "purple": "#9c5ec7",
-    "text": "#373d4c",
-    "muted": "#697284",
-    "dim": "#939cad",
-    "toolSuccessBg": "#e6f2e9",
-    "toolErrorBg": "#f8ecee"
+    "bg": "#1a1d24",
+    "panel": "#20242c",
+    "panelAlt": "#242933",
+    "selected": "#303744",
+    "border": "#3c4456",
+    "accent": "#56a5ea",
+    "cyan": "#4aaab6",
+    "green": "#8ab66f",
+    "red": "#d7616b",
+    "yellow": "#d9b670",
+    "orange": "#c38f5d",
+    "purple": "#bb6cd2",
+    "text": "#bcc3cf",
+    "muted": "#929aa8",
+    "dim": "#667081",
+    "toolSuccessBg": "#283129",
+    "toolErrorBg": "#34282e"
   },
   "colors": {
     "accent": "accent",
@@ -80,8 +80,8 @@
     "bashMode": "green"
   },
   "export": {
-    "pageBg": "#f6f7fb",
-    "cardBg": "#ffffff",
-    "infoBg": "#fef5e6"
+    "pageBg": "#1a1d24",
+    "cardBg": "#20242c",
+    "infoBg": "#312c22"
   }
 }

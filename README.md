@@ -23,9 +23,11 @@ After install, open `/settings` in pi and select one of the installed themes.
 ## Available themes
 
 - `atom-one-dark` ([preview](assets/previews/atom-one-dark.png))
+- `atom-one-darker` ([preview](assets/previews/atom-one-darker.png))
+- `atom-one-darkest` ([preview](assets/previews/atom-one-darkest.png))
 - `atom-one-light` ([preview](assets/previews/atom-one-light.png))
-- `atom-one-light-crisp` ([preview](assets/previews/atom-one-light-crisp.png))
-- `atom-one-light-soft` ([preview](assets/previews/atom-one-light-soft.png))
+- `atom-one-lighter` ([preview](assets/previews/atom-one-lighter.png))
+- `atom-one-lightest` ([preview](assets/previews/atom-one-lightest.png))
 
 ## Package info
 

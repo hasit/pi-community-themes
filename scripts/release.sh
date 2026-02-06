@@ -14,13 +14,14 @@ Example:
 
 What this script does:
   1) Verifies clean git working tree
-  2) Validates preview naming: assets/previews/<theme-name>.png
-  3) Updates package.json version + tag-pinned pi.image URL
-  4) Updates pinned README install tag
-  5) Promotes CHANGELOG [Unreleased] section into a new version entry
-  6) Commits and tags v<version>
-  7) Optionally pushes and creates GitHub release (notes from CHANGELOG)
-  8) Optional smoke test with pinned install command
+  2) Validates theme naming/completeness: light, lighter, lightest, dark, darker, darkest
+  3) Validates preview naming: assets/previews/<theme-name>.png
+  4) Updates package.json version + tag-pinned pi.image URL
+  5) Updates pinned README install tag
+  6) Promotes CHANGELOG [Unreleased] section into a new version entry
+  7) Commits and tags v<version>
+  8) Optionally pushes and creates GitHub release (notes from CHANGELOG)
+  9) Optional smoke test with pinned install command
 
 Options:
   --commit-message <msg>   Release commit message
@@ -153,7 +154,11 @@ import glob
 import json
 from pathlib import Path
 
-missing = []
+allowed_suffixes = {"light", "lighter", "lightest", "dark", "darker", "darkest"}
+missing_previews = []
+invalid_names = []
+families = {}
+
 for theme_path in sorted(glob.glob('themes/*.json')):
     if theme_path.endswith('/.gitkeep'):
         continue
@@ -161,18 +166,44 @@ for theme_path in sorted(glob.glob('themes/*.json')):
     name = data.get('name')
     if not name:
         raise SystemExit(f'Missing theme name in {theme_path}')
+
+    if '-' not in name:
+        invalid_names.append(name)
+        continue
+
+    family, suffix = name.rsplit('-', 1)
+    if suffix not in allowed_suffixes:
+        invalid_names.append(name)
+    families.setdefault(family, set()).add(suffix)
+
     preview = Path('assets/previews') / f'{name}.png'
     if not preview.exists():
-        missing.append(str(preview))
+        missing_previews.append(str(preview))
 
-if missing:
-    raise SystemExit('Missing per-theme preview files:\n- ' + '\n- '.join(missing))
+if invalid_names:
+    raise SystemExit(
+        'Theme names must end with one of: '
+        + ', '.join(sorted(allowed_suffixes))
+        + '\nInvalid names:\n- '
+        + '\n- '.join(sorted(invalid_names))
+    )
+
+for family, suffixes in sorted(families.items()):
+    missing = sorted(allowed_suffixes - suffixes)
+    if missing:
+        raise SystemExit(
+            f'Theme family "{family}" is incomplete. '
+            'Missing variants: ' + ', '.join(missing)
+        )
+
+if missing_previews:
+    raise SystemExit('Missing per-theme preview files:\n- ' + '\n- '.join(missing_previews))
 PY
 
 if (( DRY_RUN == 1 )); then
   echo "[dry-run] tag: $TAG"
   echo "[dry-run] owner/repo: $OWNER_REPO"
-  echo "[dry-run] validate: assets/previews/<theme-name>.png for all themes"
+  echo "[dry-run] validate: naming + completeness (light/lighter/lightest/dark/darker/darkest)"\n  echo "[dry-run] validate: assets/previews/<theme-name>.png for all themes"
   echo "[dry-run] package image preview: $IMAGE_PREVIEW_PATH"
   echo "[dry-run] update: package.json version + pi.image"
   echo "[dry-run] update: README pinned tag"
