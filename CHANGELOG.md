@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v0.2.2] - 2026-02-06
+
 ### Added (Unreleased)
 
 - Deterministic preview generator: `scripts/generate_previews.py`.
