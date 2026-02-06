@@ -192,8 +192,6 @@ def render_preview(theme_path: Path) -> Path:
 def main() -> None:
     generated = []
     for theme_path in sorted(THEMES_DIR.glob("*.json")):
-        if theme_path.name == ".gitkeep":
-            continue
         generated.append(render_preview(theme_path))
     for path in generated:
         print(path.relative_to(ROOT))

@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
   - `solarized-light`
   - `solarized-dark`
 - Added `config/official-theme-variants.json` for release-time validation.
+- Added `.gitignore` for OS/editor/runtime artifacts.
 
 ### Updated (Unreleased)
 
@@ -43,6 +44,8 @@ All notable changes to this project will be documented in this file.
     `nord-dark`, `nord-darker`, `nord-darkest`
   - `solarized-lighter`, `solarized-lightest`,
     `solarized-darker`, `solarized-darkest`
+- Removed legacy top-level preview file: `assets/preview.png`.
+- Removed unnecessary placeholder file: `themes/.gitkeep`.
 
 ## [v0.2.3] - 2026-02-06
 

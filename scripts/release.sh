@@ -169,8 +169,6 @@ missing_previews = []
 name_mismatch = []
 
 for theme_path in sorted(glob.glob('themes/*.json')):
-    if theme_path.endswith('/.gitkeep'):
-        continue
     p = Path(theme_path)
     data = json.loads(p.read_text())
     name = data.get('name')

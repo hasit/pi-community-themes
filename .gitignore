@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+*.swp
+*.swo
+
+# Logs
+npm-debug.log*
