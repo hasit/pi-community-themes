@@ -203,7 +203,8 @@ PY
 if (( DRY_RUN == 1 )); then
   echo "[dry-run] tag: $TAG"
   echo "[dry-run] owner/repo: $OWNER_REPO"
-  echo "[dry-run] validate: naming + completeness (light/lighter/lightest/dark/darker/darkest)"\n  echo "[dry-run] validate: assets/previews/<theme-name>.png for all themes"
+  echo "[dry-run] validate: naming + completeness (light/lighter/lightest/dark/darker/darkest)"
+  echo "[dry-run] validate: assets/previews/<theme-name>.png for all themes"
   echo "[dry-run] package image preview: $IMAGE_PREVIEW_PATH"
   echo "[dry-run] update: package.json version + pi.image"
   echo "[dry-run] update: README pinned tag"

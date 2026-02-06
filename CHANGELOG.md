@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 - README theme list now uses only the standard naming set:
   `light`, `lighter`, `lightest`, `dark`, `darker`, `darkest`.
 - Release script now validates naming convention and family completeness.
+- Release script dry-run output formatting was corrected.
 
 ### Removed (Unreleased)
 
