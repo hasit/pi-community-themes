@@ -1,6 +1,6 @@
 {
   "name": "pi-community-themes",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Community-curated themes for pi coding agent",
   "license": "MIT",
   "repository": {
@@ -28,6 +28,6 @@
     "themes": [
       "./themes"
     ],
-    "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/v0.2.3/assets/previews/atom-one-light.png"
+    "image": "https://raw.githubusercontent.com/hasit/pi-community-themes/v0.3.0/assets/previews/atom-one-light.png"
   }
 }

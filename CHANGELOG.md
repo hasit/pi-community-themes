@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Added (Unreleased)
+## [v0.3.0] - 2026-02-06
+
+### Added (v0.3.0)
 
 - Added official Catppuccin variants:
   - `catppuccin-latte`
@@ -23,14 +25,14 @@ All notable changes to this project will be documented in this file.
 - Added `config/official-theme-variants.json` for release-time validation.
 - Added `.gitignore` for OS/editor/runtime artifacts.
 
-### Updated (Unreleased)
+### Updated (v0.3.0)
 
 - README theme catalog now lists only official variants.
 - Regenerated previews to match the official variant set.
 - Release script now validates themes against
   `config/official-theme-variants.json`.
 
-### Removed (Unreleased)
+### Removed (v0.3.0)
 
 - Removed non-official synthetic variants:
   - `atom-one-lighter`, `atom-one-lightest`, `atom-one-darker`, `atom-one-darkest`
