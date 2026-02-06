@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [v0.2.3] - 2026-02-06
+
 ### Added (Unreleased)
 
 - Added `atom-one-darker` and `atom-one-darkest` themes.
