@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added (Unreleased)
+
+- Added five popular theme families:
+  - `catppuccin`
+  - `dracula`
+  - `gruvbox`
+  - `nord`
+  - `solarized`
+- Added six variants for each new family:
+  `light`, `lighter`, `lightest`, `dark`, `darker`, `darkest`.
+
+### Updated (Unreleased)
+
+- Regenerated previews for all theme files after adding new families.
+- Expanded README theme catalog with grouped family sections and preview links.
+
+### Removed (Unreleased)
+
+- None.
+
 ## [v0.2.3] - 2026-02-06
 
 ### Added (v0.2.3)
