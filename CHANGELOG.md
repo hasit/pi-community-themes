@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added (Unreleased)
+
+- Added `material-palenight` theme and preview assets.
+
+### Updated (Unreleased)
+
+- Registered `material-palenight` in the official theme list.
+- Updated `README.md` theme catalog.
+
+### Removed (Unreleased)
+
+
 ## [v0.3.0] - 2026-02-06
 
 ### Added (v0.3.0)
