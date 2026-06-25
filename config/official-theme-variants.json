@@ -10,6 +10,9 @@
     "light-medium",
     "light-soft"
   ],
+  "material": [
+    "palenight"
+  ],
   "nord": [""],
   "solarized": ["light", "dark"]
 }

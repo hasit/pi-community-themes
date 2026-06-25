@@ -47,6 +47,10 @@ After install, open `/settings` in pi-coding-agent and select one of the install
 - `gruvbox-dark-medium` ([preview](assets/previews/gruvbox-dark-medium.png))
 - `gruvbox-dark-hard` ([preview](assets/previews/gruvbox-dark-hard.png))
 
+### material
+
+- `material-palenight` ([preview](assets/previews/material-palenight.png))
+
 ### nord
 
 - `nord` ([preview](assets/previews/nord.png))
