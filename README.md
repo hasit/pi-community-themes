@@ -13,7 +13,7 @@ pi install git:https://github.com/hasit/pi-community-themes
 Or pin to a tag/ref:
 
 ```bash
-pi install git:https://github.com/hasit/pi-community-themes@v0.3.0
+pi install git:https://github.com/hasit/pi-community-themes@v0.4.0
 ```
 
 ## Usage

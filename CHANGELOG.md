@@ -4,17 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Added (Unreleased)
+## [v0.4.0] - 2026-08-14
 
-- Added `material-palenight` theme and preview assets.
+### Added (v0.4.0)
 
-### Updated (Unreleased)
+- Added `material-palenight` theme and preview assets, contributed by
+  [@itskemo](https://github.com/itskemo) in
+  [#1](https://github.com/hasit/pi-community-themes/pull/1).
+
+### Updated (v0.4.0)
 
 - Registered `material-palenight` in the official theme list.
 - Updated `README.md` theme catalog.
+- Clarified that the themes target `pi-coding-agent`.
 
-### Removed (Unreleased)
+### Removed (v0.4.0)
 
+- None.
 
 ## [v0.3.0] - 2026-02-06
 
