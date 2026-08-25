@@ -10,6 +10,16 @@
     "light-medium",
     "light-soft"
   ],
+  "macbook-neo": [
+    "blush-light",
+    "blush-dark",
+    "citrus-light",
+    "citrus-dark",
+    "indigo-light",
+    "indigo-dark",
+    "silver-light",
+    "silver-dark"
+  ],
   "material": [
     "palenight"
   ],

@@ -47,6 +47,17 @@ After install, open `/settings` in pi-coding-agent and select one of the install
 - `gruvbox-dark-medium` ([preview](assets/previews/gruvbox-dark-medium.png))
 - `gruvbox-dark-hard` ([preview](assets/previews/gruvbox-dark-hard.png))
 
+### macbook-neo
+
+- `macbook-neo-blush-light` ([preview](assets/previews/macbook-neo-blush-light.png))
+- `macbook-neo-blush-dark` ([preview](assets/previews/macbook-neo-blush-dark.png))
+- `macbook-neo-citrus-light` ([preview](assets/previews/macbook-neo-citrus-light.png))
+- `macbook-neo-citrus-dark` ([preview](assets/previews/macbook-neo-citrus-dark.png))
+- `macbook-neo-indigo-light` ([preview](assets/previews/macbook-neo-indigo-light.png))
+- `macbook-neo-indigo-dark` ([preview](assets/previews/macbook-neo-indigo-dark.png))
+- `macbook-neo-silver-light` ([preview](assets/previews/macbook-neo-silver-light.png))
+- `macbook-neo-silver-dark` ([preview](assets/previews/macbook-neo-silver-dark.png))
+
 ### material
 
 - `material-palenight` ([preview](assets/previews/material-palenight.png))

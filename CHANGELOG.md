@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added (Unreleased)
+
+- Added light and dark themes for all four MacBook Neo colors, with preview assets:
+  - `macbook-neo-blush-light`, `macbook-neo-blush-dark`
+  - `macbook-neo-citrus-light`, `macbook-neo-citrus-dark`
+  - `macbook-neo-indigo-light`, `macbook-neo-indigo-dark`
+  - `macbook-neo-silver-light`, `macbook-neo-silver-dark`.
+
+### Updated (Unreleased)
+
+- Registered all MacBook Neo color variants in the official theme manifest.
+- Updated `README.md` theme catalog.
+
+### Removed (Unreleased)
+
+- None.
+
 ## [v0.4.0] - 2026-08-14
 
 ### Added (v0.4.0)
