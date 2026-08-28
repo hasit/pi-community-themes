@@ -6,7 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added (Unreleased)
 
-- Added light and dark themes for all four MacBook Neo colors, with preview assets:
+- Added light and dark themes for all four MacBook Neo colors, with preview
+  assets, contributed by [@jdholst](https://github.com/jdholst) in
+  [#2](https://github.com/hasit/pi-community-themes/pull/2):
   - `macbook-neo-blush-light`, `macbook-neo-blush-dark`
   - `macbook-neo-citrus-light`, `macbook-neo-citrus-dark`
   - `macbook-neo-indigo-light`, `macbook-neo-indigo-dark`
